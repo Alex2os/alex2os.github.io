@@ -30,11 +30,12 @@
         flex-direction: row;
         align-items: center;
         justify-content: center;
-        width: 30%;
-        min-width: 25%;
+        width: 500px;
 
         & div {
             display: flex;
+            flex-wrap: wrap;
+            flex-direction: row;
             align-items: center;
             justify-content: center;
 
@@ -44,6 +45,7 @@
             border-left: none;
             border-right: none;
             border-top: none;
+
             gap: 5px;
             padding: 10px;
 
@@ -51,11 +53,13 @@
             width: 100%;
 
             & a {
-                width: 100%;
+                width: 13%;
                 display: flex;
                 justify-content: center;
+                
 
                 & img {
+                    
                     width: 70%;
                     transition: 0.3s;
                 }
@@ -69,17 +73,6 @@
     }
 }
 
-@media screen and (max-width: 850px) {
-
-    .about_me_flex {
-
-        & .about_me_info {
-            & p {
-                font-size: 17px;
-            }
-        }
-    }
-}
 
 .contact_information_flex {
     display: flex;
@@ -183,7 +176,7 @@
 
     .main_title_flex {
         & .main_title {
-            font-size: 2.5rem;
+            font-size: 2.3rem;
         }
     }
 }
@@ -268,6 +261,7 @@
     margin: 20px;
     padding: 10px;
     display: flex;
+    flex-wrap: wrap;
     flex-direction: row;
     align-items: center;
     justify-content: center;
@@ -282,8 +276,8 @@
     align-items: center;
     justify-content: center;
     height: auto;
-    min-width: 80%;
-    max-width: 80%;
+    min-width: 60%;
+    max-width: 60%;
     gap: 1vh;
 
     & img {
@@ -343,7 +337,7 @@
         font-size: 20px;
         text-align: justify;
         max-width: 300px;
-        font-size: clamp(10px, 2vw, 20px);
+        
     }
 }
 
