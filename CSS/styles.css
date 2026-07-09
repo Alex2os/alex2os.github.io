@@ -222,6 +222,7 @@
         color: transparent;
         background-size: 200%, auto;
         animation: navigation_options_gradient_animations 2s linear infinite;
+        cursor: pointer;
     }
 }
 
