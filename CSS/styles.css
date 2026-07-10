@@ -1,3 +1,93 @@
+.gallery_display {
+    display: flex;
+    min-height: 100vh;
+    width: 100%;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+
+    top: 0;
+    gap: 20px;
+
+    background: rgba(0, 0, 0, 0.4);
+
+    z-index: 2;
+}
+
+.gallery_image_container {
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 65%;
+
+    gap: 20px;
+
+    & img {
+        width: 100%;
+    }
+}
+
+.gallery_button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: #161616;
+    color: rgb(255, 255, 255);
+
+    border: 2px solid #FFF;
+
+    height: 100px;
+    width: 50px;
+
+    transition: 0.1s;
+
+    user-select: none;
+    font-size: 50px;
+
+}
+
+.gallery_button:hover{
+    opacity: 0.6;
+    cursor: pointer;
+}
+
+.hidden_element {
+    display: none;
+}
+
+.default_button_style {
+
+    display: flex;
+    align-items: center;
+    text-align: center;
+    text-decoration: none;
+
+    max-width: 30%;
+    height: 30px;
+
+    /* for some reason when using default scale(1.0) when scaling in the animation it looks weird. we use this to prevent that weird animation, assigning default scale to 1.02.*/
+    border: 2px solid #333;
+    border-image: linear-gradient(90deg, #ffbd42, #3ef108) 1;
+    padding: 20px;
+    color: white;
+    font-size: 20px;
+    transition: 0.1s;
+
+    background: #161616;
+
+    user-select: none;
+}
+
+.default_button_style:hover {
+    opacity: 0.6;
+    cursor: pointer;
+}
+
 .about_me_flex {
     display: flex;
     flex-direction: column;
@@ -276,6 +366,7 @@
     & img:hover {
         transform: scale(1.03);
         opacity: 0.7;
+        cursor: pointer;
     }
 
     & a {
@@ -290,28 +381,6 @@
     flex-direction: column;
     flex-wrap: wrap;
     margin: 10px;
-
-    & a {
-        text-decoration: none;
-        max-width: 50%;
-
-        & p {
-            transform: scale(1.02);
-            /* for some reason when using default scale(1.0) when scaling in the animation it looks weird. we use this to prevent that weird animation, assigning default scale to 1.02.*/
-            border: 2px solid #333;
-            border-image: linear-gradient(90deg, #ffbd42, #3ef108) 1;
-            padding: 20px;
-            color: white;
-            font-size: 20px;
-            transition: 0.3s;
-            text-align: center;
-        }
-
-        & p:hover {
-            transform: scale(1.1);
-            opacity: 0.7;
-        }
-    }
 
     & p {
         font-size: 20px;
@@ -351,8 +420,8 @@ body {
         }
     }
 
-    .projects_text_container{
-        & a{
+    .projects_text_container {
+        & a {
             align-self: center;
         }
     }

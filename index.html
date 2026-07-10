@@ -11,13 +11,27 @@
 </head>
 
 <body>
+    <div class="gallery_display">
+
+        <a id = "gallery_button_left" class="gallery_button">&#8672;</a>
+
+        <div class="gallery_image_container">
+
+            <a id="gallery_button_exit" class="default_button_style">
+                Exit
+            </a>
+        </div>
+
+        <a id = "gallery_button_right" class="gallery_button">&#8674;</a>
+
+    </div>
 
     <div class="navigation_bar">
-        <a id = "home_button">Home</a>
-        <a id = "about_me_button">About me</a>
-        <a id = "projects_button">Projects</a>
-        <a id = "games_button">Games</a>
-        <a id = "contact_button">Contact</a>
+        <a id="home_button">Home</a>
+        <a id="about_me_button">About me</a>
+        <a id="projects_button">Projects</a>
+        <a id="games_button">Games</a>
+        <a id="contact_button">Contact</a>
     </div>
 
     <section id="home" class="main_title_flex">
@@ -89,56 +103,31 @@
     <section id="projects" class="projects_flex">
         <h1>Projects</h1>
 
-        <!-- minecraft godot -->
-        <div class="project">
-
-            <div class="projects_image_container">
-
-                <a href="Resources/Images/minecraft_godot.png" alt="minecraft_godot_1" target="_blank"><img
-                        src=" Resources/Images/minecraft_godot.png"></a>
-                <a href="Resources/Images/minecraft_godot2.png" alt="minecraft_godot_2" target="_blank"><img
-                        src="Resources/Images/minecraft_godot2.png"></a>
-                <a href="Resources/Images/minecraft_godot3.png" alt="minecraft_godot_3" target="_blank"><img
-                        src="Resources/Images/minecraft_godot3.png"></a>
-                <a href="Resources/Images/minecraft_godot4.png" alt="minecraft_godot_4" target="_blank"><img
-                        src="Resources/Images/minecraft_godot4.png"></a>
-
-            </div>
-
-            <div class="projects_text_container">
-                <h2>Minecraft Clone</h2>
-                <p>This is a Minecraft Clone where you can break and place blocks; a
-                    little sandbox to play in!</p>
-            </div>
-        </div>
-
         <!-- proclot sim-->
         <div class="project">
 
-
-
             <div class="projects_image_container">
 
-                <a href="Resources/Images/proclot_sim1.png" alt="proclot_sim1" target="_blank">
+                <a class="project_image" alt="proclot_sim1">
                     <img src="Resources/Images/proclot_sim1.png" />
                 </a>
 
-                <a href="Resources/Images/proclot_sim2.png" alt="proclot_sim2" target="_blank">
+                <a class="project_image" alt="proclot_sim2">
                     <img src="Resources/Images/proclot_sim2.png" />
                 </a>
 
-                <a href="Resources/Images/proclot_sim3.png" alt="proclot_sim1" target="_blank">
+                <a class="project_image" alt="proclot_sim3">
                     <img src="Resources/Images/proclot_sim3.png" />
                 </a>
 
             </div>
 
             <div class="projects_text_container">
-                    <h2>ProcLot Sim</h2>
-                    <p>ProcLot Sim is a desktop application that simulates the old computing
-                        that we had in the 50s: batch processing.<br><br>You can add processes to this app and then
-                        start the simulation to see how the processes work.</p>
-                </div>
+                <h2>ProcLot Sim</h2>
+                <p>ProcLot Sim is a desktop application that simulates the old computing
+                    that we had in the 50s: batch processing.<br><br>You can add processes to this app and then
+                    start the simulation to see how the processes work.</p>
+            </div>
 
         </div>
 
@@ -146,16 +135,16 @@
         <div class="project">
 
             <div class="projects_image_container">
-                <a href="Resources/Images/museum_search1.png" alt="museum_search1" target="_blank">
+                <a class="project_image" alt="museum_search1">
                     <img src="Resources/Images/museum_search1.png" />
                 </a>
-                <a href="Resources/Images/museum_search2.png" alt="museum_search2" target="_blank">
+                <a class="project_image" alt="museum_search2">
                     <img src="Resources/Images/museum_search2.png" />
                 </a>
-                <a href="Resources/Images/museum_search3.png" alt="museum_search3" target="_blank">
+                <a class="project_image" alt="museum_search3">
                     <img src="Resources/Images/museum_search3.png" />
                 </a>
-                <a href="Resources/Images/museum_search4.png" alt="museum_search4" target="_blank">
+                <a class="project_image" alt="museum_search4">
                     <img src="Resources/Images/museum_search4.png" />
                 </a>
             </div>
@@ -172,20 +161,40 @@
     <section id="games" class="projects_flex">
         <h1>Games</h1>
 
-        <!-- vocho's console -->
+        <!-- minecraft godot -->
         <div class="project">
 
             <div class="projects_image_container">
-                <a href="Resources/Images/vochos_console4.jpg" alt="vochos_console1" target="_blank">
+
+                <a class="project_image" alt="minecraft_godot1"><img src=" Resources/Images/minecraft_godot1.png"></a>
+                <a class="project_image" alt="minecraft_godot2"><img src="Resources/Images/minecraft_godot2.png"></a>
+                <a class="project_image" alt="minecraft_godot3"><img src="Resources/Images/minecraft_godot3.png"></a>
+                <a class="project_image" alt="minecraft_godot4"><img src="Resources/Images/minecraft_godot4.png"></a>
+
+            </div>
+
+            <div class="projects_text_container">
+                <h2>Minecraft Clone</h2>
+                <p>This is a Minecraft Clone where you can break and place blocks; a
+                    little sandbox to play in!</p>
+            </div>
+        </div>
+
+        <!-- vocho's console -->
+        <div class="project">
+
+            <!-- this .jpg images have to be changed to .png in order to work correctly.-->
+            <div class="projects_image_container">
+                <a class="project_image" alt="vochos_console4">
                     <img src="Resources/Images/vochos_console4.jpg" />
                 </a>
-                <a href="Resources/Images/vochos_console3.jpg" alt="vochos_console1" target="_blank">
+                <a class="project_image" alt="vochos_console3">
                     <img src="Resources/Images/vochos_console3.jpg" />
                 </a>
-                <a href="Resources/Images/vochos_console1.jpg" alt="vochos_console1" target="_blank">
+                <a class="project_image" alt="vochos_console1">
                     <img src="Resources/Images/vochos_console1.jpg" />
                 </a>
-                <a href="Resources/Images/vochos_console2.jpg" alt="vochos_console1" target="_blank">
+                <a class="project_image" alt="vochos_console2">
                     <img src="Resources/Images/vochos_console2.jpg" />
                 </a>
             </div>
@@ -196,27 +205,22 @@
                     In this game you are a car, having to avoid the cars that come against your way.</br></br>
                     With the help of perks, survive and get the maximum score!</p>
 
-                <a href="https://www.youtube.com/watch?v=WmMy84zlejY" target="_blank">
-                    <p>See video</p>
+                <a class="default_button_style" href="https://www.youtube.com/watch?v=WmMy84zlejY" target="_blank">
+                    See video
                 </a>
 
             </div>
-
-
         </div>
 
         <!-- pixel gems-->
         <div class="project">
 
             <div class="projects_image_container">
-                <a href="Resources/Images/pixel_gems1.png" alt="pixel_gems1" target="_blank"><img
-                        src="Resources/Images/pixel_gems1.png"></a>
-                <a href="Resources/Images/pixel_gems2.png" alt="pixel_gems2" target="_blank"><img
-                        src="Resources/Images/pixel_gems2.png"></a>
-                <a href="Resources/Images/pixel_gems3.png" alt="pixel_gems3" target="_blank"><img
-                        src="Resources/Images/pixel_gems3.png"></a>
-                <a href="Resources/Images/pixel_gems4.png" alt="pixel_gems4" target="_blank"><img
-                        src="Resources/Images/pixel_gems4.png"></a>
+                <a class="project_image" alt="pixel_gems1"><img src="Resources/Images/pixel_gems1.png"></a>
+                <a class="project_image" alt="pixel_gems2"><img src="Resources/Images/pixel_gems2.png"></a>
+                <a class="project_image" alt="pixel_gems3" "><img
+                        src=" Resources/Images/pixel_gems3.png"></a>
+                <a class="project_image" alt="pixel_gems4"><img src="Resources/Images/pixel_gems4.png"></a>
             </div>
 
             <div class="projects_text_container">
@@ -225,8 +229,8 @@
                     space!<br><br>Art and assets done by me.</p>
 
 
-                <a href="https://alexcats1.itch.io/pixelgems" target="_blank">
-                    <p>Try the game</p>
+                <a class="default_button_style" href="https://alexcats1.itch.io/pixelgems" target="_blank">
+                    Try the game
                 </a>
 
             </div>
@@ -260,6 +264,6 @@
     </div>
 </body>
 
-<script src = "script.js"></script>
+<script src="script.js"></script>
 
 </html>
