@@ -30,7 +30,7 @@
         flex-direction: row;
         align-items: center;
         justify-content: center;
-        width: 500px;
+        width: 400px;
 
         & div {
             display: flex;
@@ -53,13 +53,13 @@
             width: 100%;
 
             & a {
-                width: 13%;
+                width: 18%;
                 display: flex;
                 justify-content: center;
-                
+
 
                 & img {
-                    
+
                     width: 70%;
                     transition: 0.3s;
                 }
@@ -106,16 +106,6 @@
     & img:hover {
         transform: scale(1.1);
         opacity: 0.7;
-    }
-}
-
-
-@media screen and (max-width: 850px) {
-
-    .contact_information_flex {
-        & p {
-            font-size: 17px;
-        }
     }
 }
 
@@ -172,20 +162,11 @@
 
 }
 
-@media screen and (max-width: 850px) {
-
-    .main_title_flex {
-        & .main_title {
-            font-size: 2.3rem;
-        }
-    }
-}
-
 .navigation_bar {
     display: flex;
     position: fixed;
     z-index: 1;
-    /* with the position fixed, it means thiss will not move from the position it's in, even if we move the page up or down.*/
+    /* with the position fixed, it means this will not move from the position it's in, even if we move the page up or down.*/
 
     background: #161616;
 
@@ -196,16 +177,16 @@
     border-top: none;
 
     top: 0;
-    /* this helps us to put the class above of all the other content. */
+    left: 0;
 
     align-items: center;
-    justify-content: left;
+    justify-content: center;
     flex-direction: row;
-    padding: 10px;
 
+    padding-top: 10px;
+    padding-bottom: 10px;
     height: 50px;
     width: 100%;
-    /* width of 100% so it is good.*/
     gap: 10px;
 
     & a {
@@ -277,8 +258,7 @@
     align-items: center;
     justify-content: center;
     height: auto;
-    min-width: 60%;
-    max-width: 60%;
+    width: 60%;
     gap: 1vh;
 
     & img {
@@ -299,7 +279,6 @@
     }
 
     & a {
-        max-width: 100%;
         min-width: 48%;
         width: 48%;
     }
@@ -338,7 +317,7 @@
         font-size: 20px;
         text-align: justify;
         max-width: 300px;
-        
+
     }
 }
 
@@ -356,16 +335,37 @@ body {
     border-right: none;
     border-left: none;
     border-bottom: none;
+    padding: 20px;
     border-image: linear-gradient(90deg, #ffbd42, #3ef108) 1;
     color: white;
 }
 
-@media screen and (max-width: 850px) {
+@media screen and (max-width: 1000px) {
     h1 {
         font-size: 1.5rem;
     }
 
-    h2 {
-        font-size: 1rem;
+    .contact_information_flex {
+        & p {
+            font-size: 17px;
+        }
+    }
+
+    .projects_image_container {
+        width: 100%;
+    }
+
+    .main_title_flex {
+        & .main_title {
+            font-size: 2.1rem;
+        }
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .projects_image_container {
+        & a {
+            width: 100%;
+        }
     }
 }
