@@ -351,6 +351,12 @@ body {
         }
     }
 
+    .projects_text_container{
+        & a{
+            align-self: center;
+        }
+    }
+
     .projects_image_container {
         width: 100%;
     }
