@@ -25,10 +25,14 @@
     width: 65%;
 
     gap: 20px;
+}
 
-    & img {
-        width: 100%;
-    }
+.gallery_image_big{
+    width: 60%;
+}
+
+.gallery_image{
+    width: 100%;
 }
 
 .gallery_button {
@@ -361,6 +365,8 @@
         border-top: none;
         border-image: linear-gradient(90deg, #ffbd42, #3ef108) 1;
         transition: 0.3s;
+
+        user-select: none;
     }
 
     & img:hover {
@@ -435,6 +441,10 @@ body {
             font-size: 2.1rem;
         }
     }
+
+    .gallery_image_big{
+        width: 80%;
+    }
 }
 
 @media screen and (max-width: 600px) {
@@ -442,5 +452,17 @@ body {
         & a {
             width: 100%;
         }
+    }
+
+    .gallery_button{
+        display: none;
+    }
+
+    .gallery_image_container{
+        width: 90%;
+    }
+
+    .gallery_image_big{
+        width: 100%;
     }
 }

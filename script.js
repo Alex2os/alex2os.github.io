@@ -71,10 +71,10 @@ const ImageNames = new Map([
     [8, "minecraft_godot2"],
     [9, "minecraft_godot3"],
     [10, "minecraft_godot4"],
-    [11, ""], // vocho's images will be here when they're turned from .jpg to .png
-    [12, ""],
-    [13, ""],
-    [14, ""],
+    [11, "vochos_console1"], // vocho's images will be here when they're turned from .jpg to .png
+    [12, "vochos_console2"],
+    [13, "vochos_console3"],
+    [14, "vochos_console4"],
     [15, "pixel_gems1"],
     [16, "pixel_gems2"],
     [17, "pixel_gems3"],
@@ -108,7 +108,6 @@ const GalleryLeftButton = document.getElementById("gallery_button_left");
 
 GalleryLeftButton?.addEventListener("click", function () {
 
-    console.log(actual_image_index)
     if(actual_image_index - 1 < 0) actual_image_index = ImageNames.size - 1;
     else actual_image_index--;
 
@@ -120,7 +119,6 @@ GalleryLeftButton?.addEventListener("click", function () {
 const GalleryRightButton = document.getElementById("gallery_button_right");
 GalleryRightButton?.addEventListener("click", function () {
 
-    console.log(actual_image_index)
     if(actual_image_index + 1 > ImageNames.size - 1) actual_image_index = 0;
     else actual_image_index++;
     
@@ -148,6 +146,7 @@ document.addEventListener("keydown", (event) => {
     if(event.code == "Escape" && !GalleryDisplay?.classList.contains("hidden_element")) ExitGalleryDisplay();
 });
 
+/*
 document.addEventListener("click", (event) => {
 
     // in this case we add a document event listener for the clicks. when a click occurs, we check the following:
@@ -160,6 +159,11 @@ document.addEventListener("click", (event) => {
 
 
 });
+*/
+
+// function to know if an image is medium or not, using the size of the image.
+// in this case we use a threshold of 700 for the width to know if it's medium
+function IsImageMedium(image_object){ return image_object.naturalWidth <= 700 || image_object.naturalHeight <= 700 ? true : false; }
 
 // function to create and instantiate an image in the gallery
 
@@ -173,6 +177,10 @@ function CreateImageInGallery(image_name) {
     // we assign the attributes we need for our resource
     image.src = "Resources/Images/" + image_name + ".png";
     image.alt = image_name;
+
+    if(IsImageMedium(image)) image.classList.add("gallery_image_big");
+   
+    else image.classList.add("gallery_image");
 
     // debugging only
     // console.log(image.src, image.alt);
@@ -195,7 +203,6 @@ project_images.forEach((image) => {
 
         actual_image_index = SearchImageIndex(image_name);
 
-        console.log("actual image index: ", actual_image_index);
         // when adding or removing classes we don't use the . here. just the class' name
         GalleryDisplay?.classList.remove("hidden_element");
     });
