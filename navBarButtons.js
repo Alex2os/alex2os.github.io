@@ -1,9 +1,13 @@
 // color for navigation bar buttons when entering/leaving a section
 
+const NavBarButtons = document.querySelectorAll(".default_nav_button");
+
 // options for the observer
+// by just using this setup for the options, it works well detecting the sections, even when scrolling slowly or returning to sections.
+// the problem was in using a rootmargin different than 0px. this is just fine for what we need.
 const Options = {
     root: null,
-    rootMargin: '-20% 0px -60% 0px', // this is so the observer can trigger when a section has occupied 
+    rootMargin: "-50% 0px -49% 0px",
     threshold: 0,
 };
 
@@ -11,9 +15,17 @@ const Options = {
 const SectionsObserverCallback = (entries, observer) => {
     entries.forEach((entry) => {
 
-        console.log("callback called");
         if(entry.isIntersecting) {
-            console.log("hello");
+
+            console.log("intersecting: ", entry.target.id);
+
+            NavBarButtons.forEach(button => {
+                button.classList.replace("active_nav_button", "default_nav_button");
+            });
+
+            if(entry.target.id == "home") return;
+            else document.getElementById(entry.target.id + "_button")?.classList.replace("default_nav_button", "active_nav_button");
+
         }
 
     })

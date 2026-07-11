@@ -27,11 +27,11 @@
     gap: 20px;
 }
 
-.gallery_image_big{
+.gallery_image_big {
     width: 60%;
 }
 
-.gallery_image{
+.gallery_image {
     width: 100%;
 }
 
@@ -56,7 +56,7 @@
 
 }
 
-.gallery_button:hover{
+.gallery_button:hover {
     opacity: 0.6;
     cursor: pointer;
 }
@@ -210,7 +210,7 @@
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    height: 110vh;
     z-index: -1;
 }
 
@@ -283,34 +283,33 @@
     height: 50px;
     width: 100%;
     gap: 10px;
-
-    & a {
-        color: white;
-        font-size: 20px;
-        text-decoration: none;
-        transition: 0s;
-    }
-
-    & a:hover {
-        transition: 0.1s;
-        background: linear-gradient(to right, #ffbd42, #3ef108, #ffbd42);
-        background-clip: text;
-        color: transparent;
-        background-size: 200%, auto;
-        animation: navigation_options_gradient_animations 2s linear infinite;
-        cursor: pointer;
-    }
 }
 
-@keyframes navigation_options_gradient_animations {
-    0% {
-        background-position: 200% 50%;
-    }
+.default_nav_button {
+    color: white;
+    font-size: 20px;
+    text-decoration: none;
+    font-weight: bold;
+}
 
-    100% {
-        background-position: 0%, 50%;
-    }
+.default_nav_button:hover {
+    background: linear-gradient(to right, #ffbd42, #3ef108, #ffbd42);
+    background-clip: text;
+    color: transparent;
+    background-size: 250%, auto;
+    cursor: pointer;
+}
 
+
+.active_nav_button {
+    background: linear-gradient(to right, #ffbd42, #3ef108, #ffbd42);
+    background-clip: text;
+    color: transparent;
+    background-size: 250%, auto;
+    
+    font-weight: bold;
+    font-size: 20px;
+    text-decoration: none;
 }
 
 .page_footer {
@@ -443,7 +442,7 @@ body {
         }
     }
 
-    .gallery_image_big{
+    .gallery_image_big {
         width: 80%;
     }
 }
@@ -455,15 +454,15 @@ body {
         }
     }
 
-    .gallery_button{
+    .gallery_button {
         display: none;
     }
 
-    .gallery_image_container{
+    .gallery_image_container {
         width: 90%;
     }
 
-    .gallery_image_big{
+    .gallery_image_big {
         width: 100%;
     }
 }
