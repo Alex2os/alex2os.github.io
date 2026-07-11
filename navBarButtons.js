@@ -3,8 +3,8 @@
 const NavBarButtons = document.querySelectorAll(".default_nav_button");
 
 // options for the observer
-// by just using this setup for the options, it works well detecting the sections, even when scrolling slowly or returning to sections.
-// the problem was in using a rootmargin different than 0px. this is just fine for what we need.
+// seems that for now using a threshold of 0 (zero) and using the horizontal line on the screen (root margin) it works correctly. still this may cause visual-
+// bugs, but for now this solution works for all sections.
 const Options = {
     root: null,
     rootMargin: "-50% 0px -49% 0px",
@@ -17,7 +17,7 @@ const SectionsObserverCallback = (entries, observer) => {
 
         if(entry.isIntersecting) {
 
-            console.log("intersecting: ", entry.target.id);
+            // console.log("intersecting: ", entry.target.id);
 
             NavBarButtons.forEach(button => {
                 button.classList.replace("active_nav_button", "default_nav_button");
