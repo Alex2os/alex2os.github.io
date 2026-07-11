@@ -43,7 +43,8 @@
     background: #161616;
     color: rgb(255, 255, 255);
 
-    border: 2px solid #FFF;
+    border: 2px solid #333;
+    border-image: linear-gradient(90deg, #ffbd42, #3ef108) 1;
 
     height: 100px;
     width: 50px;
@@ -51,7 +52,7 @@
     transition: 0.1s;
 
     user-select: none;
-    font-size: 50px;
+    font-size: 40px;
 
 }
 

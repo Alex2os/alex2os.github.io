@@ -1,61 +1,3 @@
-// scroll for navigation bar buttons
-const HomeButton = document.getElementById("home_button");
-const AboutMeButton = document.getElementById("about_me_button");
-const ProjectsButton = document.getElementById("projects_button");
-const GamesButton = document.getElementById("games_button");
-const ContactButton = document.getElementById("contact_button");
-
-const HomeFlex = document.getElementById("home");
-const AboutMeFlex = document.getElementById("about_me");
-const ProjectsFlex = document.getElementById("projects");
-const GamesFlex = document.getElementById("games");
-const ContactFlex = document.getElementById("contact");
-
-HomeButton?.addEventListener("click", function () {MoveToTarget(HomeFlex);});
-AboutMeButton?.addEventListener("click", function () {MoveToTarget(AboutMeFlex);});
-ProjectsButton?.addEventListener("click", function () {MoveToTarget(ProjectsFlex);});
-GamesButton?.addEventListener("click", function () {MoveToTarget(GamesFlex);});
-ContactButton?.addEventListener("click", function () {MoveToTarget(ContactFlex);});
-
-function MoveToTarget(flex) {
-
-    flex?.scrollIntoView({
-        behavior: "smooth",
-        block: "start"
-    });
-}
-
-// color for navigation bar buttons when entering/leaving a section
-
-// options for the observer
-const Options = {
-    root: null,
-    rootMargin: "0px",
-    scrollMargin: "0px",
-    threshold: 0.1,
-};
-
-// function callback for the observer. here we do all the logic needed to check the intersections with the sections and changing the color of the buttons
-const SectionsObserverCallback = (entries, observer) => {
-    entries.forEach((entry) => {
-        if(entry.isIntersecting) {
-        }
-
-    })
-};
-
-// we declare our observer to check for all the sections in the page
-const Observer = new IntersectionObserver(SectionsObserverCallback, Options);
-// we can obtain all the sections in our document with the following line of code. reminder that we obtain the <section> elements in the html.
-const Sections = document.querySelectorAll("section");
-
-// then for all the sections that we obtained we add each one to the observer.
-Sections.forEach(section => {
-    Observer.observe(section);
-});
-
-// PART TO DISPLAY THE IMAGES AND DO THEM BIGGER WHEN CLICKED
-
 // we declare a map (which is like a dictionary) to save the paths to all our images. we do this for the gallery display, so we can access this images-
 // whenever we want without worrying about the order too much.
 
@@ -85,31 +27,23 @@ const ImageNames = new Map([
     [22, "pixel_gems4"],
 ]);
 
+// with querySelector we get the first match with what we are searching. in this case, we want our gallery display
+const GalleryDisplay = document.querySelector(".gallery_display");
+const GalleryImageContainer = document.querySelector(".gallery_image_container");
+const GalleryExitButton = document.getElementById("gallery_button_exit");
+const GalleryLeftButton = document.getElementById("gallery_button_left");
+const GalleryRightButton = document.getElementById("gallery_button_right");
+const project_images = document.querySelectorAll(".project_image");
+
 // here we declare an image variable that will help us to instantiate and control the current image in the gallerydisplay
 let image;
-let actual_image_index;
+let actual_image_index; // this is for the actual index we are in in the gallery. we use this variable to control what image is going to be displayed next or-
+// prior when clicking the buttons.
 
-// with querySelector we get the first match with what we are searching. in this case, we want our gallery display
-const GalleryDisplay = document.querySelector(".gallery_display")
 GalleryDisplay?.classList.add("hidden_element");
 
-// function to exit the gallery display once the user clicks the exit button or clicks elsewhere other than the image or the buttons
-function ExitGalleryDisplay() {
-    GalleryDisplay?.classList.add("hidden_element");
-
-    // to remove the image or the object from the document we can just do element.remove() like we do here. we also assign the image to null.
-    image?.remove();
-    image = null;
-
-}
-
-const GalleryImageContainer = document.querySelector(".gallery_image_container");
-
-const GalleryExitButton = document.getElementById("gallery_button_exit");
+// gallery buttons
 GalleryExitButton?.addEventListener("click", function () {ExitGalleryDisplay()})
-
-const GalleryLeftButton = document.getElementById("gallery_button_left");
-
 GalleryLeftButton?.addEventListener("click", function () {
 
     if(actual_image_index - 1 < 0) actual_image_index = ImageNames.size - 1;
@@ -119,8 +53,6 @@ GalleryLeftButton?.addEventListener("click", function () {
     CreateImageInGallery(ImageNames.get(actual_image_index));
 
 });
-
-const GalleryRightButton = document.getElementById("gallery_button_right");
 GalleryRightButton?.addEventListener("click", function () {
 
     if(actual_image_index + 1 > ImageNames.size - 1) actual_image_index = 0;
@@ -132,14 +64,7 @@ GalleryRightButton?.addEventListener("click", function () {
 
 });
 
-
-
-// a function to search a given image name/key's index. this is used so each time the user clicks on an image we know which index the image has.
-// knowing the index is used for the gallery buttons, to switch between images.
-function SearchImageIndex(image_key) {
-    for(let i = 0; i < ImageNames.size; i++) if(image_key == ImageNames.get(i)) return i;
-}
-
+// document event listener for a key
 // we add an event listener for a key. in this case we check whenever the user presses the escape key. if the user presses it when the gallery display is active-
 // (e.g, gallery display classlist does not contain hidden_element) then we exit the gallery display.
 document.addEventListener("keydown", (event) => {
@@ -149,6 +74,39 @@ document.addEventListener("keydown", (event) => {
 
     if(event.code == "Escape" && !GalleryDisplay?.classList.contains("hidden_element")) ExitGalleryDisplay();
 });
+
+// for each project image, we add an event listener so when it's clicked we create the image in the gallery and also show the gallery display
+project_images.forEach((image) => {
+    image.addEventListener("click", function () {
+
+        let image_name = image.getAttribute("alt");
+
+        CreateImageInGallery(image_name)
+
+        actual_image_index = SearchImageIndex(image_name);
+
+        // when adding or removing classes we don't use the . here. just the class' name
+        GalleryDisplay?.classList.remove("hidden_element");
+    });
+});
+
+
+
+// function to exit the gallery display once the user clicks the exit button or clicks elsewhere other than the image or the buttons
+function ExitGalleryDisplay() {
+    GalleryDisplay?.classList.add("hidden_element");
+
+    // to remove the image or the object from the document we can just do element.remove() like we do here. we also assign the image to null.
+    image?.remove();
+    image = null;
+
+}
+
+// a function to search a given image name/key's index. this is used so each time the user clicks on an image we know which index the image has.
+// knowing the index is used for the gallery buttons, to switch between images.
+function SearchImageIndex(image_key) {
+    for(let i = 0; i < ImageNames.size; i++) if(image_key == ImageNames.get(i)) return i;
+}
 
 /*
 document.addEventListener("click", (event) => {
@@ -194,20 +152,3 @@ function CreateImageInGallery(image_name) {
     GalleryImageContainer?.appendChild(image);
 
 }
-
-const project_images = document.querySelectorAll(".project_image");
-
-// for each project image, we add an event listener so when it's clicked we create the image in the gallery and also show the gallery display
-project_images.forEach((image) => {
-    image.addEventListener("click", function () {
-
-        let image_name = image.getAttribute("alt");
-
-        CreateImageInGallery(image_name)
-
-        actual_image_index = SearchImageIndex(image_name);
-
-        // when adding or removing classes we don't use the . here. just the class' name
-        GalleryDisplay?.classList.remove("hidden_element");
-    });
-});
