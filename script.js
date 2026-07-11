@@ -71,14 +71,18 @@ const ImageNames = new Map([
     [8, "minecraft_godot2"],
     [9, "minecraft_godot3"],
     [10, "minecraft_godot4"],
-    [11, "vochos_console1"], // vocho's images will be here when they're turned from .jpg to .png
+    [11, "vochos_console1"],
     [12, "vochos_console2"],
     [13, "vochos_console3"],
     [14, "vochos_console4"],
-    [15, "pixel_gems1"],
-    [16, "pixel_gems2"],
-    [17, "pixel_gems3"],
-    [18, "pixel_gems4"],
+    [15, "vochos_remake1"],
+    [16, "vochos_remake2"],
+    [17, "vochos_remake3"],
+    [18, "vochos_remake4"],
+    [19, "pixel_gems1"],
+    [20, "pixel_gems2"],
+    [21, "pixel_gems3"],
+    [22, "pixel_gems4"],
 ]);
 
 // here we declare an image variable that will help us to instantiate and control the current image in the gallerydisplay
