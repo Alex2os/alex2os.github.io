@@ -3,14 +3,24 @@
 const NavBarButtons = document.querySelectorAll(".default_nav_button");
 
 // options for the observer
-// using a rootmargin of 0px and a threshold of 0.5 is enough for what we want in the navigation bar. previous visual bugs were solved by-
-// instead of grabbing the whole sections (see commented code at the end of this file) we now grab the id's by themself, and it seems this is the correct way-
-// to do this.
-const Options = {
+// for sections that are not that big (like home, about me and contacts) a threshold of 0.6 is enough. for other sections (like projects and games) a-
+// threshold of less than 0.5 is used, as a threshold of 0.5 or greater like this one can't work for those bigger sections.
+
+// something to mention here is that we use these thresholds here (0.6 for smaller and 0.3 for big) in order for no visual bugs to happen.
+// in testing, with a threshold in smaller with 0.5 and 0.2 on big some visual bugs happened, so this is the setup for now for no visual bugs and that works-
+// for now. maybe in the future (when sections are bigger, depending if we add or erase projects) we will need to change the thresholds again, but this-
+// works properly for now
+const OptionsSmallSection = {
     root: null,
     rootMargin: "0px",
-    threshold: 0.5,
+    threshold: 0.6,
 };
+
+const OptionsBigSection ={
+    root: null,
+    rootMargin: "0px",
+    threshold: 0.3,
+}
 
 // function callback for the observer. here we do all the logic needed to check the intersections with the sections and changing the color of the buttons
 const SectionsObserverCallback = (entries, observer) => {
@@ -33,7 +43,8 @@ const SectionsObserverCallback = (entries, observer) => {
 };
 
 // we declare our observer to check for all the sections in the page
-const Observer = new IntersectionObserver(SectionsObserverCallback, Options);
+const ObserverSmallSections = new IntersectionObserver(SectionsObserverCallback, OptionsSmallSection);
+const ObserverBigSection = new IntersectionObserver(SectionsObserverCallback, OptionsBigSection);
 
 // we can obtain all the sections in our document with the following line of code. reminder that we obtain the <section> elements in the html.
 // const Sections = document.querySelectorAll("section");
@@ -45,12 +56,14 @@ Sections.forEach(section => {
 });
 */
 
-// we obtain the sections in our code to add an observer to them. we don't choose the sections  as in the commented code, as that ruins the purpose of the-
-// options threshold of 0.5, as if we grab the sections by themself, for bigger sections (like the games section) it will not work properly. so we-
-// grab the sections by id ("#games", "#projects", etc.) and then add an observer to them.
-Observer.observe(document.querySelector("#home"));
-Observer.observe(document.querySelector("#about_me"));
-Observer.observe(document.querySelector("#projects"));
-Observer.observe(document.querySelector("#games"));
-Observer.observe(document.querySelector("#contact"));
+// we obtain the sections manually (we can obtain both here with "#id" or like in the commented code) to add the required observer to them.
+ObserverSmallSections.observe(document.querySelector("#home"));
+ObserverSmallSections.observe(document.querySelector("#about_me"));
+ObserverSmallSections.observe(document.querySelector("#contact"));
+
+ObserverBigSection.observe(document.querySelector("#projects"));
+ObserverBigSection.observe(document.querySelector("#games"));
+
+console.log(document.querySelector("#home"));
+
 
