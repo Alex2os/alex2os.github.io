@@ -101,8 +101,6 @@
     border-right: none;
     justify-content: start;
 
-    min-height: 105vh;
-
     & .about_me_info {
         display: flex;
         flex-direction: column;
@@ -196,8 +194,6 @@
     border-right: none;
     border-left: none;
     border-top: none;
-
-    height: 100vh;
 
     & p {
         font-size: 20px;
@@ -318,7 +314,6 @@
 .projects_flex {
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
     align-items: center;
     border-left: none;
     border-right: none;
@@ -400,11 +395,14 @@ body {
 .main_title_flex,
 .projects_flex,
 .about_me_flex,
-.page_footer,
 .contact_information_flex {
-    
+    min-height: 100vh;
     padding: 20px;
-    
+    color: white;
+}
+
+.page_footer{
+     padding: 20px;
     color: white;
 }
 
@@ -420,7 +418,6 @@ body {
     /* we use justify content to align the content vertically.*/
     border: none;
     /* we don't want borders. */
-    min-height: 105vh;
     height: auto;
 
     border-top: none;
