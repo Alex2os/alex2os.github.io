@@ -101,7 +101,7 @@
     border-right: none;
     justify-content: start;
 
-    min-height: 100vh;
+    min-height: 105vh;
 
     & .about_me_info {
         display: flex;
@@ -140,7 +140,7 @@
             border-right: none;
             border-top: none;
 
-       
+
             padding: 10px;
 
             height: auto;
@@ -168,7 +168,7 @@
 }
 
 
-.about_me_content{
+.about_me_content {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -178,7 +178,7 @@
     width: 100%;
 }
 
-.lang_container{
+.lang_container {
     display: flex;
     width: 100%;
     align-items: center;
@@ -232,36 +232,6 @@
     z-index: -999;
 }
 
-/* main title*/
-.main_title_flex {
-    display: flex;
-    /* we select the flex display, as this is very helpful for automatically sizing things and stuff.*/
-    flex-direction: column;
-    /* this is to put the items as column or as row. in this case we want this as row.*/
-    align-items: center;
-    /* we use align-items to align them horizontally.*/
-    justify-content: center;
-    /* we use justify content to align the content vertically.*/
-    border: none;
-    /* we don't want borders. */
-    min-height: 100vh;
-    height: auto;
-    margin-top: 50px;
-    /* we can use vh. this is so the page measures the size of the window and with this the page can automatically resize whenever it's resized. vh = viewport height. */
-    /* in this case we use 100vh because it's the height of the viewport.*/
-    gap: 20px;
-
-    & .main_title {
-        background: linear-gradient(to right, #ffbd42, #3ef108, #ffbd42);
-        background-clip: text;
-        color: transparent;
-        background-size: 200% auto;
-        font-size: 4rem;
-        animation: main_title_gradient_animation 3s linear infinite;
-        margin: 0;
-    }
-}
-
 
 
 @keyframes main_title_gradient_animation {
@@ -278,29 +248,33 @@
 .navigation_bar {
     display: flex;
     position: fixed;
+    flex-direction: column;
+
     z-index: 1;
     /* with the position fixed, it means this will not move from the position it's in, even if we move the page up or down.*/
 
-    background: #161616;
+    background: #222222;
 
-    border: 3px solid #222222;
-
-    border-left: none;
-    border-right: none;
-    border-top: none;
-
-    top: 0;
-    left: 0;
+    right: 40px;
+    top: 35%;
+   
+    margin-left: auto;
 
     align-items: center;
     justify-content: center;
-    flex-direction: row;
 
-    padding-top: 10px;
-    padding-bottom: 10px;
-    height: 50px;
-    width: 100%;
-    gap: 10px;
+    border-radius: 10px;
+
+    padding: 10px;
+
+    height: 270px;
+    width: 60px;
+    gap: 20px;
+
+}
+
+.material-symbols-outlined {
+    font-size: 3px;
 }
 
 .default_nav_button {
@@ -324,7 +298,7 @@
     background-clip: text;
     color: transparent;
     background-size: 250%, auto;
-    
+
     font-weight: bold;
     font-size: 20px;
     text-decoration: none;
@@ -344,6 +318,7 @@
 .projects_flex {
     display: flex;
     flex-direction: column;
+    min-height: 100vh;
     align-items: center;
     border-left: none;
     border-right: none;
@@ -418,19 +393,57 @@ body {
     font-family: 'Poppins', sans-serif;
 }
 
+.main_subtitle {
+    text-align: center;
+}
+
 .main_title_flex,
 .projects_flex,
 .about_me_flex,
 .page_footer,
 .contact_information_flex {
-    border: 3px solid #333;
-    border-right: none;
-    border-left: none;
-    border-bottom: none;
+    
     padding: 20px;
-    box-sizing: border-box;
-    border-image: linear-gradient(90deg, #ffbd42, #3ef108) 1;
+    
     color: white;
+}
+
+/* main title*/
+.main_title_flex {
+    display: flex;
+    /* we select the flex display, as this is very helpful for automatically sizing things and stuff.*/
+    flex-direction: column;
+    /* this is to put the items as column or as row. in this case we want this as row.*/
+    align-items: center;
+    /* we use align-items to align them horizontally.*/
+    justify-content: center;
+    /* we use justify content to align the content vertically.*/
+    border: none;
+    /* we don't want borders. */
+    min-height: 105vh;
+    height: auto;
+
+    border-top: none;
+    /* we can use vh. this is so the page measures the size of the window and with this the page can automatically resize whenever it's resized. vh = viewport height. */
+    /* in this case we use 100vh because it's the height of the viewport.*/
+    gap: 20px;
+
+    & .main_title {
+        background: linear-gradient(to right, #ffbd42, #3ef108, #ffbd42);
+        background-clip: text;
+        color: transparent;
+        background-size: 200% auto;
+        font-size: 4rem;
+        animation: main_title_gradient_animation 3s linear infinite;
+        margin: 0;
+    }
+}
+
+.section_division{
+    border: 3px solid #333;
+    box-sizing: border-box;
+    border-bottom: none;
+    border-image: linear-gradient(90deg, #ffbd42, #3ef108) 1;    
 }
 
 @media screen and (max-width: 1000px) {
@@ -464,7 +477,7 @@ body {
         width: 80%;
     }
 
-    .about_me_content{
+    .about_me_content {
         flex-direction: column;
     }
 }
