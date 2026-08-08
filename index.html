@@ -28,7 +28,7 @@
 
     <div class="navigation_bar">
         <a class="default_nav_button" id="home_button">Home</a>
-        <a class="default_nav_button" id="about_me_button">About me</a>
+        <a class="default_nav_button" id="about_me_button">About</a>
         <a class="default_nav_button" id="projects_button">Projects</a>
         <a class="default_nav_button" id="games_button">Games</a>
         <a class="default_nav_button" id="contact_button">Contact</a>
@@ -36,67 +36,75 @@
 
     <section id="home" class="main_title_flex">
         <p class="main_title">Javier Ledesma | Alex2os</p> <!-- title of the page-->
-        <h1>Portfolio</h1>
+        <div>
+            <h1>Computer Engineering Student at CUCEI, UdeG</h1>
+        </div>
     </section>
 
     <section id="about_me" class="about_me_flex">
-        <h1>About me</h1>
+        <h1>About</h1>
 
-        <div class="about_me_info">
+        <div class="about_me_content">
 
-            <p>Computer Engineering student at Universidad de Guadalajara (CUCEI).
-                <br><br>
-                I build games in Godot and desktop applications with Avalonia UI, both in C#, and I have a strong
-                foundation in C and C++ focused on algorithms.
-                <br><br>
-                I also develop backend projects, building APIs in C#
-                along with some frontend work in Next.js and JavaScript.
-                <br><br>
-                Outside of code, I enjoy street photography and drawing pixel art.
-            </p>
+            <div class="about_me_info">
+
+                <p>I'm interested in developing backend for web apps, games, aplications and so on.
+                    I've also touched some frontend as I like to develop little videogames in my free time.</br></br>
+                    Through different projects I've learnt languages, frameworks and architectures, as
+                    I like to learn things through experience and making them myself.
+                </p>
+
+            </div>
 
             <div class="about_me_languages">
 
-                <div>
-                    <a href="https://dotnet.microsoft.com/en-us/languages/csharp">
-                        <img src="Resources/Images/csharp_logo.png" alt="c#_logo" />
-                    </a>
 
-                    <a href="https://learn.microsoft.com/en-us/cpp/?view=msvc-170">
-                        <img src="Resources/Images/c++_logo.png" alt="c++_logo" />
-                    </a>
+                <div class="lang_wrapper">
 
-                    <a href="https://learn.microsoft.com/en-us/cpp/?view=msvc-170">
-                        <img src="Resources/Images/c_logo.png" alt="c_logo" />
-                    </a>
+                    <div class="lang_container">
+                        <a href="https://dotnet.microsoft.com/en-us/languages/csharp">
+                            <img src="Resources/Images/csharp_logo.png" alt="c#_logo" />
+                        </a>
 
-                    <a href="https://godotengine.org/">
-                        <img src="Resources/Images/godot_logo.png" alt="godot_logo" />
-                    </a>
+                        <a href="https://learn.microsoft.com/en-us/cpp/?view=msvc-170">
+                            <img src="Resources/Images/c++_logo.png" alt="c++_logo" />
+                        </a>
 
-                    <a href="https://avaloniaui.net/">
-                        <img src="Resources/Images/avalonia_ui_logo.png" alt=avalonia_ui_logo" />
-                    </a>
+                        <a href="https://learn.microsoft.com/en-us/cpp/?view=msvc-170">
+                            <img src="Resources/Images/c_logo.png" alt="c_logo" />
 
-                    <a href="https://developer.mozilla.org/en-US/docs/Web/HTML">
-                        <img src="Resources/Images/html_logo.svg" alt=html_logo" />
-                    </a>
+                        </a>
+                    </div>
 
-                    <a href="https://developer.mozilla.org/en-US/docs/Web/CSS">
-                        <img src="Resources/Images/css_logo.svg" alt=css_logo" />
-                    </a>
+                    <div class="lang_container">
 
-                    <a href="https://nextjs.org/">
-                        <img src="Resources/Images/nextjs_logo.svg" alt=nextjs_logo" />
-                    </a>
+                        <a href="https://godotengine.org/">
+                            <img src="Resources/Images/godot_logo.png" alt="godot_logo" />
+                        </a>
 
-                    <a href="https://developer.mozilla.org/es/docs/Web/JavaScript">
-                        <img src="Resources/Images/javascript_logo.svg" alt="javascript_logo" />
-                    </a>
+                        <a href="https://nextjs.org/">
+                            <img src="Resources/Images/nextjs_logo.svg" alt=nextjs_logo" />
+                        </a>
+
+                    </div>
+
+                    <div class="lang_container">
+
+                        <a href="https://developer.mozilla.org/en-US/docs/Web/HTML">
+                            <img src="Resources/Images/html_logo.svg" alt=html_logo" />
+                        </a>
+
+                        <a href="https://developer.mozilla.org/en-US/docs/Web/CSS">
+                            <img src="Resources/Images/css_logo.svg" alt=css_logo" />
+                        </a>
+                        <a href="https://developer.mozilla.org/es/docs/Web/JavaScript">
+                            <img src="Resources/Images/javascript_logo.svg" alt="javascript_logo" />
+                        </a>
+                    </div>
+
 
                 </div>
             </div>
-
         </div>
     </section>
 
@@ -157,7 +165,7 @@
             </div>
         </div>
 
-        
+
     </section>
 
     <section id="games" class="projects_flex">
@@ -292,7 +300,6 @@
     </div>
 </body>
 
-<script src="navBarButtons.js"></script>
 <script src="galleryDisplay.js"></script>
 <script src="smoothScrolling.js"></script>
 

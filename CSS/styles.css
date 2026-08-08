@@ -99,11 +99,9 @@
     align-items: center;
     border-left: none;
     border-right: none;
-    justify-content: center;
+    justify-content: start;
 
     min-height: 100vh;
-    /* with this part, setting the min-height and height auto fixes the problems of the flex overlapping other elements. */
-    height: auto;
 
     & .about_me_info {
         display: flex;
@@ -122,12 +120,13 @@
 
     & .about_me_languages {
         display: flex;
+        position: relative;
         flex-direction: row;
         align-items: center;
         justify-content: center;
-        width: 400px;
+        width: 250px;
 
-        & div {
+        & .lang_wrapper {
             display: flex;
             flex-wrap: wrap;
             flex-direction: row;
@@ -141,31 +140,51 @@
             border-right: none;
             border-top: none;
 
-            gap: 5px;
+       
             padding: 10px;
 
             height: auto;
             width: 100%;
 
             & a {
-                width: 18%;
+                width: 55px;
                 display: flex;
                 justify-content: center;
+                padding: 10px;
 
 
                 & img {
-
-                    width: 70%;
-                    transition: 0.3s;
+                    width: 100%;
+                    transition: 0.1s;
                 }
             }
         }
 
         & img:hover {
-            transform: scale(1.1);
+            opacity: 0.6;
             /* when the about_me_images are hovered, we can scale them to have a little animation.*/
         }
     }
+}
+
+
+.about_me_content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 200px;
+    flex: 1;
+    width: 100%;
+}
+
+.lang_container{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+
 }
 
 
@@ -199,8 +218,7 @@
     }
 
     & img:hover {
-        transform: scale(1.1);
-        opacity: 0.7;
+        opacity: 0.6;
     }
 }
 
@@ -211,7 +229,7 @@
     left: 0;
     width: 100%;
     height: 110vh;
-    z-index: -1;
+    z-index: -999;
 }
 
 /* main title*/
@@ -359,19 +377,18 @@
         width: auto;
         height: auto;
         max-width: 100%;
-        border: 5px solid;
+        border: 2px solid;
         border-right: none;
         border-left: none;
         border-top: none;
         border-image: linear-gradient(90deg, #ffbd42, #3ef108) 1;
-        transition: 0.3s;
+        transition: 0.2s;
 
         user-select: none;
     }
 
     & img:hover {
-        transform: scale(1.03);
-        opacity: 0.7;
+        opacity: 0.6;
         cursor: pointer;
     }
 
@@ -406,11 +423,12 @@ body {
 .about_me_flex,
 .page_footer,
 .contact_information_flex {
-    border: 5px solid #333;
+    border: 3px solid #333;
     border-right: none;
     border-left: none;
     border-bottom: none;
     padding: 20px;
+    box-sizing: border-box;
     border-image: linear-gradient(90deg, #ffbd42, #3ef108) 1;
     color: white;
 }
@@ -444,6 +462,10 @@ body {
 
     .gallery_image_big {
         width: 80%;
+    }
+
+    .about_me_content{
+        flex-direction: column;
     }
 }
 
