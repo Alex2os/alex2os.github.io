@@ -69,16 +69,17 @@
 
     display: flex;
     align-items: center;
+    justify-content: center;
     text-align: center;
     text-decoration: none;
 
-    max-width: 30%;
-    height: 30px;
+    width: 100px;
+    height: 50px;
 
     /* for some reason when using default scale(1.0) when scaling in the animation it looks weird. we use this to prevent that weird animation, assigning default scale to 1.02.*/
     border: 2px solid #333;
     border-image: linear-gradient(90deg, #ffbd42, #3ef108) 1;
-    padding: 20px;
+    padding: 15px;
     color: white;
     font-size: 20px;
     transition: 0.1s;
