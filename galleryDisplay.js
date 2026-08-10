@@ -123,7 +123,7 @@ document.addEventListener("click", (event) => {
 
 // function to know if an image is medium or not, using the size of the image.
 // in this case we use a threshold of 700 for the width to know if it's medium
-function IsImageMedium(image_object){ return image_object.naturalWidth <= 700 || image_object.naturalHeight <= 700 ? true : false; }
+function IsImageMedium(image_object){ return image_object.naturalWidth <= 800 || image_object.naturalHeight <= 800 ? true : false; }
 
 // function to create and instantiate an image in the gallery
 
