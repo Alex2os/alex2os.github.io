@@ -40,7 +40,9 @@ let image;
 let actual_image_index; // this is for the actual index we are in in the gallery. we use this variable to control what image is going to be displayed next or-
 // prior when clicking the buttons.
 
-GalleryDisplay?.classList.add("hidden_element");
+// there is no need to add the class hidden_element here in the code as we can do it directly on the html/css. previously we had that and there was an error-
+// where for a brief time the gallery display was not hidden, as there was a delay in which the code added the hidden_element class to the gallery display.
+// GalleryDisplay?.classList.add("hidden_element");
 
 // gallery buttons
 GalleryExitButton?.addEventListener("click", function () {ExitGalleryDisplay()})
