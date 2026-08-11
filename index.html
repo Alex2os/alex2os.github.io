@@ -4,12 +4,9 @@
 
 <head>
 
-    <link rel="shortcut icon" href="#">
     <link rel="stylesheet" href="CSS/styles.css">
     <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=call,home,mail,person,stadia_controller,work" />
-
-
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=call,home,keyboard_arrow_left,keyboard_arrow_right,mail,person,stadia_controller,work" />
 
     <title>Alex2os Portfolio</title>
 </head>
@@ -17,16 +14,23 @@
 <body>
     <div class="gallery_display hidden_element">
 
-        <a id="gallery_button_left" class="gallery_button">&#8672;</a>
+        <div class="gallery_display_content_flex">
 
-        <div class="gallery_image_container">
+            <a id="gallery_button_left" class="gallery_button"><span class="material-symbols-outlined">
+                    keyboard_arrow_left
+                </span></a>
 
-            <a id="gallery_button_exit" class="default_button_style">
+            <div class="gallery_image_container"></div>
+
+            <a id="gallery_button_right" class="gallery_button"><span class="material-symbols-outlined">
+                    keyboard_arrow_right
+                </span></a>
+
+            <a id="gallery_button_exit" class="gallery_button_exit">
                 Exit
             </a>
-        </div>
 
-        <a id="gallery_button_right" class="gallery_button">&#8674;</a>
+        </div>
 
     </div>
 
@@ -59,71 +63,70 @@
 
     <section id="about_me" class="about_me_flex">
 
-        <div class="about_me_title">
-            <h1>About</h1>
+
+        <div class="about_me_info">
+
+            <div class="about_me_title">
+                <h1>About</h1>
+            </div>
+
+            <p>I'm interested in developing backend for web apps, games, aplications and so on.
+                I've also touched some frontend as I like to develop little videogames in my free time.</br></br>
+                Through different projects I've learnt languages, frameworks and architectures, as
+                I like to learn things through experience and making them myself.
+            </p>
+
         </div>
 
-        <div class="about_me_content">
-
-            <div class="about_me_info">
-
-                <p>I'm interested in developing backend for web apps, games, aplications and so on.
-                    I've also touched some frontend as I like to develop little videogames in my free time.</br></br>
-                    Through different projects I've learnt languages, frameworks and architectures, as
-                    I like to learn things through experience and making them myself.
-                </p>
-
-            </div>
-
-            <div class="about_me_languages">
+        <div class="about_me_languages">
 
 
-                <div class="lang_wrapper">
+            <div class="lang_wrapper">
 
-                    <div class="lang_container">
-                        <a href="https://dotnet.microsoft.com/en-us/languages/csharp" target="_blank">
-                            <img src="Resources/Images/csharp_logo.png" alt="c#_logo" />
-                        </a>
+                <div class="lang_container">
+                    <a href="https://dotnet.microsoft.com/en-us/languages/csharp" target="_blank">
+                        <img src="Resources/Images/csharp_logo.png" alt="c#_logo" />
+                    </a>
 
-                        <a href="https://learn.microsoft.com/en-us/cpp/?view=msvc-170" target="_blank">
-                            <img src="Resources/Images/c++_logo.png" alt="c++_logo" />
-                        </a>
+                    <a href="https://learn.microsoft.com/en-us/cpp/?view=msvc-170" target="_blank">
+                        <img src="Resources/Images/c++_logo.png" alt="c++_logo" />
+                    </a>
 
-                        <a href="https://learn.microsoft.com/en-us/cpp/?view=msvc-170" target="_blank">
-                            <img src="Resources/Images/c_logo.png" alt="c_logo" />
+                    <a href="https://learn.microsoft.com/en-us/cpp/?view=msvc-170" target="_blank">
+                        <img src="Resources/Images/c_logo.png" alt="c_logo" />
 
-                        </a>
-                    </div>
+                    </a>
+                </div>
 
-                    <div class="lang_container">
+                <div class="lang_container">
 
-                        <a href="https://godotengine.org/" target="_blank">
-                            <img src="Resources/Images/godot_logo.png" alt="godot_logo" />
-                        </a>
+                    <a href="https://godotengine.org/" target="_blank">
+                        <img src="Resources/Images/godot_logo.png" alt="godot_logo" />
+                    </a>
 
-                        <a href="https://nextjs.org/" target="_blank">
-                            <img src="Resources/Images/nextjs_logo.svg" alt=nextjs_logo" />
-                        </a>
-
-                    </div>
-
-                    <div class="lang_container">
-
-                        <a href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank">
-                            <img src="Resources/Images/html_logo.svg" alt=html_logo" />
-                        </a>
-
-                        <a href="https://developer.mozilla.org/en-US/docs/Web/CSS" target="_blank">
-                            <img src="Resources/Images/css_logo.svg" alt=css_logo" />
-                        </a>
-                        <a href="https://developer.mozilla.org/es/docs/Web/JavaScript" target="_blank">
-                            <img src="Resources/Images/javascript_logo.svg" alt="javascript_logo" />
-                        </a>
-                    </div>
-
+                    <a href="https://nextjs.org/" target="_blank">
+                        <img src="Resources/Images/nextjs_logo.svg" alt=nextjs_logo" />
+                    </a>
 
                 </div>
+
+                <div class="lang_container">
+
+                    <a href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank">
+                        <img src="Resources/Images/html_logo.svg" alt=html_logo" />
+                    </a>
+
+                    <a href="https://developer.mozilla.org/en-US/docs/Web/CSS" target="_blank">
+                        <img src="Resources/Images/css_logo.svg" alt=css_logo" />
+                    </a>
+                    <a href="https://developer.mozilla.org/es/docs/Web/JavaScript" target="_blank">
+                        <img src="Resources/Images/javascript_logo.svg" alt="javascript_logo" />
+                    </a>
+                </div>
+
+
             </div>
+
         </div>
     </section>
 
@@ -153,14 +156,23 @@
 
             <div class="projects_text_container">
                 <h2>ProcLot Sim</h2>
-                <p>A desktop multi-platform application that simulates how computer processes work using the Round Robin
-                    (RR) algorithm.
-                    The program contains different options, states, times and information for the processes when
-                    simulating them.
-                </p>
-                <a class="default_button_style" href="https://github.com/Alex2os/ProcLot-Sim" target="_blank">
-                    Download the app
-                </a>
+
+                <div class="projects_text_inner_container">
+                    <p class="projects_text">A desktop multi-platform application that simulates how computer processes
+                        work
+                        using the Round Robin
+                        (RR) algorithm.
+                        The program contains different options, states, times and information for the processes when
+                        simulating them.
+                    </p>
+                    <div class="project_language_container">
+                        <p class="project_language purple small">c#</p>
+                        <p class="project_language darkblue medium">avalonia ui</p>
+                    </div>
+                    <a class="default_button_style" href="https://github.com/Alex2os/ProcLot-Sim" target="_blank">
+                        Download the app
+                    </a>
+                </div>
             </div>
 
         </div>
@@ -214,11 +226,18 @@
 
             <div class="projects_text_container">
                 <h2>Minecraft Clone</h2>
-                <p>This is a Minecraft Clone where you can break and place blocks.</p>
 
-                <a class="default_button_style" href="https://github.com/Alex2os/GodotCraft" target="_blank">
-                    Download the game
-                </a>
+                <div class="projects_text_inner_container">
+                    <p class="projects_text">This is a Minecraft Clone where you can break and place blocks.</p>
+                    <div class="project_language_container">
+                        <p class="project_language purple small">c#</p>
+                        <p class="project_language skyblue medium">godot engine</p>
+                    </div>
+
+                    <a class="default_button_style" href="https://github.com/Alex2os/GodotCraft" target="_blank">
+                        Download the game
+                    </a>
+                </div>
             </div>
         </div>
 
@@ -243,18 +262,28 @@
 
             <div class="projects_text_container">
                 <h2>Vocho's retro-game</h2>
-                <p>A retro-styled game with 8-bit sounds, played on console (CMD or Terminal). You have to avoid the
-                    cars
-                    that come your way in order to reach a higher score, with help of perks like shield, extra life, and
-                    others.
-                </p>
 
-                <a class="default_button_style" href="https://www.youtube.com/watch?v=WmMy84zlejY" target="_blank">
-                    See video
-                </a>
+                <div class="projects_text_inner_container">
+                    <p class="projects_text">A retro-styled game with 8-bit sounds, played on console (CMD or Terminal).
+                        You
+                        have to avoid the
+                        cars
+                        that come your way in order to reach a higher score, with help of perks like shield, extra life,
+                        and
+                        others.
+                    </p>
 
-               
-                
+                    <div class="project_language_container">
+                        <p class="project_language orange small">c++</p>
+                    </div>
+
+                    <a class="default_button_style" href="https://www.youtube.com/watch?v=WmMy84zlejY" target="_blank">
+                        See video
+                    </a>
+                </div>
+
+
+
             </div>
         </div>
 
@@ -272,11 +301,22 @@
 
             <div class="projects_text_container">
                 <h2>Vocho's Remake</h2>
-                <p>This is the remake of the Vocho's retro game, made with pixel art graphics and new mechanics.</p>
 
-                <a class="default_button_style" href="https://github.com/Alex2os/VochosRemake" target="_blank">
-                    Download the game
-                </a>
+                <div class="projects_text_inner_container">
+                    <p class="projects_text">This is the remake of the Vocho's retro game, made with pixel art graphics
+                        and
+                        new mechanics.</p>
+
+                    <div class="project_language_container">
+                        <p class="project_language purple small">c#</p>
+                        <p class="project_language skyblue medium">godot engine</p>
+                        <p class="project_language white medium">aseprite</p>
+                    </div>
+
+                    <a class="default_button_style" href="https://github.com/Alex2os/VochosRemake" target="_blank">
+                        Download the game
+                    </a>
+                </div>
             </div>
         </div>
 
@@ -293,14 +333,23 @@
 
             <div class="projects_text_container">
                 <h2>Pixel Gems</h2>
-                <p>A little game about catching gems that fall from the
-                    space.</p>
+
+                <div class="projects_text_inner_container">
+                    <p class="projects_text">A little game about catching gems that fall from the
+                        space.</p>
+
+                    <div class="project_language_container">
+                        <p class="project_language purple small">c#</p>
+                        <p class="project_language skyblue medium">godot engine</p>
+                        <p class="project_language white medium">aseprite</p>
+                    </div>
 
 
-                <a class="default_button_style" href="https://github.com/Alex2os/PixelGems" target="_blank">
-                    Try the game
-                </a>
+                    <a class="default_button_style" href="https://github.com/Alex2os/PixelGems" target="_blank">
+                        Try the game
+                    </a>
 
+                </div>
             </div>
 
         </div>
