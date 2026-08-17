@@ -79,70 +79,38 @@ p {
     width: 100%;
 }
 
-.gallery_button_content {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    height: 100%;
-    width: 100%;
-
-    color: white;
-    font-weight: bold;
-
-    border-radius: 10px;
-
-    background-color: #373737;
-
-    transition: 0.1s;
-    user-select: none;
-
-}
-
-.gallery_button_content.slide_button {
-    font-size: 40px;
-}
-
-.gallery_button_content.exit_button {
-    font-size: 17px;
-}
-
 .gallery_button {
     display: flex;
     align-items: center;
     justify-content: center;
 
-    height: 100px;
-    width: 50px;
     background-color: #222222;
 
     border-radius: 10px;
 
     padding: 10px;
 
+    color: white;
+    font-weight: bold;
+
+    user-select: none;
+
     transition: 0.1s;
 }
 
-.gallery_button_exit {
-    position: absolute;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.gallery_button.slide_button {
+    height: 100px;
+    width: 50px;
+    font-size: 40px;
+}
 
+.gallery_button.exit_button {
+    position: absolute;
+    font-size: 17px;
     bottom: 20px;
 
     width: 130px;
     height: 50px;
-
-    background-color: #222222;
-    border-radius: 10px;
-    padding: 10px;
-    transition: 0.1s;
-}
-
-.gallery_button_exit:hover {
-    opacity: 0.6;
-    cursor: pointer;
 }
 
 .gallery_button:hover {
@@ -152,34 +120,6 @@ p {
 
 .hidden_element {
     display: none;
-}
-
-.default_button_style {
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    text-decoration: none;
-
-    width: 100%;
-    height: 50px;
-
-    /* for some reason when using default scale(1.0) when scaling in the animation it looks weird. we use this to prevent that weird animation, assigning default scale to 1.02.*/
-    border: 2px solid #333;
-    border-image: linear-gradient(90deg, #ffbd42, #3ef108) 1;
-    color: white;
-    font-size: 20px;
-    transition: 0.1s;
-
-    background: #161616;
-
-    user-select: none;
-}
-
-.default_button_style:hover {
-    opacity: 0.6;
-    cursor: pointer;
 }
 
 .about_me_flex {
@@ -520,6 +460,46 @@ p {
     width: 100%;
     gap: 10px;
     height: 40px;
+}
+
+.project_link_button {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    text-align: center;
+    text-decoration: none;
+
+    font-family: "JetBrains Mono", monospace;
+    font-optical-sizing: auto;
+    font-style: normal;
+
+    width: 100%;
+    height: 40px;
+
+    /* for some reason when using default scale(1.0) when scaling in the animation it looks weird. we use this to prevent that weird animation, assigning default scale to 1.02.*/
+    background-color: #092552;
+    color: white;
+    font-size: 17px;
+    transition: 0.1s;
+
+    border-radius: 5px;
+
+    user-select: none;
+
+    & img {
+        height: 90%;
+    }
+}
+
+.project_link_button.youtube {
+    background-color: #bd0026;
+}
+
+.project_link_button:hover {
+    opacity: 0.6;
+    cursor: pointer;
 }
 
 .project_language {
