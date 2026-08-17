@@ -12,7 +12,7 @@ html {
     scrollbar-color: #FFF transparent;
 }
 
-p{
+p {
     margin: 0;
 }
 
@@ -34,24 +34,22 @@ p{
     z-index: 2;
 }
 
-.gallery_display_content_flex{
+.gallery_display_content_flex {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
     padding: 20px;
 
-    background-color: #222222;
+    gap: 20px;
 
     border-radius: 10px;
-
-    gap: 20px;
 
     height: 80%;
     width: 70%;
 
     margin-bottom: 50px;
-    
+
 }
 
 .gallery_image_container {
@@ -63,7 +61,12 @@ p{
     width: 90%;
     gap: 20px;
 
-    & img{
+    padding: 30px;
+    border-radius: 10px;
+
+    background-color: #222222;
+
+    & img {
         border-radius: 10px;
     }
 }
@@ -76,51 +79,68 @@ p{
     width: 100%;
 }
 
-.gallery_button {
+.gallery_button_content {
     display: flex;
     justify-content: center;
     align-items: center;
 
-    background-color: black;
-    color: rgb(255, 255, 255);
+    height: 100%;
+    width: 100%;
 
-    border: 2px solid #333;
-    border-image: linear-gradient(90deg, #ffbd42, #3ef108) 1;
+    color: white;
+    font-weight: bold;
 
-    height: 100px;
-    width: 50px;
+    border-radius: 10px;
+
+    background-color: #373737;
 
     transition: 0.1s;
-
     user-select: none;
-    font-size: 40px;
 
 }
 
-.gallery_button_exit{
+.gallery_button_content.slide_button {
+    font-size: 40px;
+}
+
+.gallery_button_content.exit_button {
+    font-size: 17px;
+}
+
+.gallery_button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 100px;
+    width: 50px;
+    background-color: #222222;
+
+    border-radius: 10px;
+
+    padding: 10px;
+
+    transition: 0.1s;
+}
+
+.gallery_button_exit {
     position: absolute;
     display: flex;
     align-items: center;
     justify-content: center;
+
     bottom: 20px;
 
     width: 130px;
     height: 50px;
-    color: white;
-    font-weight: bold;
-    font-size: 17px;
 
-    user-select: none;
-
-    background-color: black;
-
-    border: 2px solid #333;
-    border-image: linear-gradient(90deg, #ffbd42, #3ef108) 1;
+    background-color: #222222;
+    border-radius: 10px;
+    padding: 10px;
     transition: 0.1s;
-
 }
 
-.gallery_button_exit:hover{
+.gallery_button_exit:hover {
     opacity: 0.6;
     cursor: pointer;
 }
@@ -486,7 +506,7 @@ p{
     max-width: 300px;
 }
 
-.projects_text_inner_container{
+.projects_text_inner_container {
     display: flex;
     flex-direction: column;
     gap: 15px;
@@ -538,7 +558,7 @@ p{
     color: #ff6f21;
 }
 
-.project_language.white{
+.project_language.white {
     background-color: #8a7e39;
     border: 2px solid #bfb758;
     color: #f3f2ed;
@@ -637,18 +657,10 @@ h3 {
         }
     }
 
-    .projects_image_container {
-        width: 100%;
-    }
-
     .main_title_flex {
         & .main_title {
             font-size: 2.1rem;
         }
-    }
-
-    .gallery_image_big {
-        width: 80%;
     }
 
     .about_me_flex {
@@ -680,22 +692,21 @@ this works for any porcentage on the top, bottom, etc. (30%, 60%, etc.), it will
     }
 }
 
-@media screen and (max-width: 600px) {
-    .projects_image_container {
-        & a {
-            width: 100%;
-        }
-    }
+@media screen and (max-width: 800px) {
 
     .gallery_button {
         display: none;
     }
 
-    .gallery_image_container {
-        width: 90%;
-    }
-
     .gallery_image_big {
-        width: 100%;
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .projects_image_container {
+        & a {
+            width: 100%;
+        }
     }
 }
