@@ -64,6 +64,4 @@ ObserverSmallSections.observe(document.querySelector("#contact"));
 ObserverBigSection.observe(document.querySelector("#projects"));
 ObserverBigSection.observe(document.querySelector("#games"));
 
-console.log(document.querySelector("#home"));
-
 

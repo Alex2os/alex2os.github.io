@@ -5,22 +5,23 @@ const ImageNames = new Map([
     [0, "proclot_sim1"],
     [1, "proclot_sim2"],
     [2, "proclot_sim3"],
-    [3, "minecraft_godot1"],
-    [4, "minecraft_godot2"],
-    [5, "minecraft_godot3"],
-    [6, "minecraft_godot4"],
-    [7, "vochos_console1"],
-    [8, "vochos_console2"],
-    [9, "vochos_console3"],
-    [10, "vochos_console4"],
-    [11, "vochos_remake1"],
-    [12, "vochos_remake2"],
-    [13, "vochos_remake3"],
-    [14, "vochos_remake4"],
-    [15, "pixel_gems1"],
-    [16, "pixel_gems2"],
-    [17, "pixel_gems3"],
-    [18, "pixel_gems4"],
+    [3, "producon_1"],
+    [4, "minecraft_godot1"],
+    [5, "minecraft_godot2"],
+    [6, "minecraft_godot3"],
+    [7, "minecraft_godot4"],
+    [8, "vochos_console1"],
+    [9, "vochos_console2"],
+    [10, "vochos_console3"],
+    [11, "vochos_console4"],
+    [12, "vochos_remake1"],
+    [13, "vochos_remake2"],
+    [14, "vochos_remake3"],
+    [15, "vochos_remake4"],
+    [16, "pixel_gems1"],
+    [17, "pixel_gems2"],
+    [18, "pixel_gems3"],
+    [19, "pixel_gems4"],
 ]);
 
 // with querySelector we get the first match with what we are searching. in this case, we want our gallery display
@@ -55,7 +56,7 @@ GalleryRightButton?.addEventListener("click", function () {
 
     if(actual_image_index + 1 > ImageNames.size - 1) actual_image_index = 0;
     else actual_image_index++;
-    
+
 
     image?.remove();
     CreateImageInGallery(ImageNames.get(actual_image_index));
@@ -123,7 +124,8 @@ document.addEventListener("click", (event) => {
 
 // function to know if an image is medium or not, using the size of the image.
 // in this case we use a threshold of 700 for the width to know if it's medium
-function IsImageMedium(image_object){ return image_object.naturalWidth <= 800 || image_object.naturalHeight <= 800 ? true : false; }
+function IsImageMedium(image_object) {return image_object.naturalWidth <= 800 || image_object.naturalHeight <= 800 ? true : false;}
+function IsImageBannerLike(image_object) {return image_object.naturalWidth >= 1000 && image_object.naturalHeight <= 500 ? true : false;}
 
 // function to create and instantiate an image in the gallery
 
@@ -138,8 +140,8 @@ function CreateImageInGallery(image_name) {
     image.src = "Resources/Images/" + image_name + ".png";
     image.alt = image_name;
 
-    if(IsImageMedium(image)) image.classList.add("gallery_image_big");
-   
+    if(IsImageBannerLike(image)) image.classList.add("gallery_image_banner");
+    else if(IsImageMedium(image)) image.classList.add("gallery_image_big");
     else image.classList.add("gallery_image");
 
     // debugging only

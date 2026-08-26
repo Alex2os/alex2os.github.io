@@ -75,6 +75,10 @@ p {
     width: 60%;
 }
 
+.gallery_image_banner{
+    width: 100%;
+}
+
 .gallery_image {
     width: 100%;
 }
@@ -407,7 +411,6 @@ p {
     gap: 10px;
 
     & img {
-        width: auto;
         height: auto;
         max-width: 100%;
         transition: 0.2s;
@@ -424,6 +427,10 @@ p {
 
     & a {
         width: 49%;
+    }
+
+    & a.single_image{
+        width: 100%;
     }
 }
 
@@ -550,6 +557,20 @@ p {
 
 .project_language.medium {
     width: 120px;
+}
+
+.project_language.open_source{
+    background-color: #398a68;
+    border: 2px solid #58bf81;
+    color: #5aff9f;
+    width: 130px;
+}
+
+.project_language.closed_source{
+    background-color: #8a4839;
+    border: 2px solid #bf6758;
+    color: #ffa79d;
+    width: 130px;
 }
 
 body {
